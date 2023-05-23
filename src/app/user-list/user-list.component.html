@@ -1,0 +1,12 @@
+<div>
+  <div *ngIf="users" class="user-grid">
+    <div class="user-card" *ngFor="let user of users">
+      <h2 class="name">{{ user.firstName }} {{ user.lastName }}</h2>
+      <div class="image"><img width="100%" height="100%" [src]="user.image" [alt]="user.firstName" /></div>
+      <p class="age">age: {{ user.age}}</p>
+      <button class="button" (click)="viewUserDetail(user)">
+        View Details
+      </button>
+    </div>
+  </div>
+</div>
