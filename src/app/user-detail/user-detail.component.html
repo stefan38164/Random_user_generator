@@ -1,11 +1,18 @@
 <div class="container" *ngIf="user">
   <div class="user-detail">
-    <h2> {{ user.firstName }} {{ user.lastName }}</h2>
-    <img [src]="user.image" [alt]="user.firstName" />
-    <p>age: {{ user.age }}</p>
-    <p>adress: {{ user.address }}</p>
-    <p>email: {{ user.email }}</p>
-    <p>phone: {{ user.phone }}</p>
+    <h2>{{ user.name.first }} {{ user.name.last }}</h2>
+    <img
+      [src]="user.picture.large"
+      [alt]="user.name.first + ' ' + user.name.last"
+    />
+    <p><b>age:</b> {{ user.dob.age }}</p>
+    <p>
+      <b>address:</b> {{ user.location.street.number }}
+      {{ user.location.street.name }}, {{ user.location.city }},
+      {{ user.location.state }}
+    </p>
+    <p><b>email:</b> {{ user.email }}</p>
+    <p><b>phone:</b> {{ user.phone }}</p>
     <button class="button" (click)="goBack()">Go Back</button>
   </div>
 </div>

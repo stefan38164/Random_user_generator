@@ -6,7 +6,8 @@
 
 .user-detail {
   background-color: #f5f5f5;
-  padding: 20px;
+  padding: 20px 30px;
+  border-radius: 3%;
 }
 
 .user-detail img {

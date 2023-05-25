@@ -14,13 +14,13 @@ export class UserListComponent implements OnInit {
   constructor(private userService: UserService, private router: Router) {}
 
   ngOnInit() {
-    this.userService.getRandomUsers(50, 'female').subscribe((users) => {
+    this.userService.getRandomUsers(50,'female').subscribe((users: User[]) => {
       this.users = users;
     });
   }
 
-  viewUserDetail(user: User) {
+  viewUserDetail(user: User, id: string) {
     localStorage.setItem('selectedUser', JSON.stringify(user));
-    this.router.navigate(['/users', 'detail']);
+    this.router.navigate(['/users', id]);
   }
 }
