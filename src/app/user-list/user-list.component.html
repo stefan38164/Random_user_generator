@@ -4,14 +4,12 @@
       <h2 class="name">{{ user.name.first }} {{ user.name.last }}</h2>
       <div class="image">
         <img
-          width="100%"
-          height="100%"
           [src]="user.picture.medium"
           [alt]="user.name.first + user.name.last"
         />
       </div>
       <p class="age"><b>age:</b> {{ user.dob.age }}</p>
-      <button class="button" (click)="viewUserDetail(user, user.email)">
+      <button class="button" (click)="viewUserDetail(user)">
         View Details
       </button>
     </div>
